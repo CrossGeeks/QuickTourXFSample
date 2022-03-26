@@ -11,6 +11,8 @@ namespace QuickTourXFSample.Views.QuickTourSteps
         public BaseQuickTourPage()
         {
             InitializeComponent();
+            NextCommand = new Command<BaseQuickTourPage>(async (page) => await Next(page));
+            SkipCommand = new Command(async () => await Skip());
         }
 
         public static readonly BindableProperty ActualStepProperty = BindableProperty.Create(nameof(ActualStep),   typeof(int), typeof(BaseQuickTourPage));
@@ -23,16 +25,6 @@ namespace QuickTourXFSample.Views.QuickTourSteps
         {
             get => (int) GetValue(ActualStepProperty);
             set => SetValue(ActualStepProperty, value);
-        }
-
-        protected override void OnBindingContextChanged()
-        {
-            base.OnBindingContextChanged();
-            if (BindingContext != null)
-            {
-                NextCommand = new Command<BaseQuickTourPage>(async (page) => await Next(page));
-                SkipCommand = new Command(async () => await Skip());
-            }
         }
 
         public ICommand NextCommand

@@ -23,6 +23,10 @@ namespace QuickTourXFSample.Views
             BindingContext = this;
         }
 
-
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            ShowQuickTourCommand.Execute(null);
+        }
     }
 }
