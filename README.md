@@ -2,9 +2,9 @@
 
 
 <p align="center">
-<img height:"600" src="iOS.gif" />
+<img height:"400"  src="iOS.gif" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img height:"600" src="android.gif" />
+<img height:"400" src="android.gif" />
 </p>
 
 
