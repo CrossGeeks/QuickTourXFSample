@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="QuickTourXFSample.Views.HomePage">
+    <FlyoutPage.Flyout>
+       <ContentPage Title="Menu"/>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <ContentPage >
+                    <ContentPage.ToolbarItems>
+                        <ToolbarItem Text="Add"
+                                     Order="Primary"
+                                     Priority="0" />
+                    </ContentPage.ToolbarItems>
+
+                    <StackLayout>
+                        <StackLayout BackgroundColor="{StaticResource MainAppColor}"
+                                     Padding="10,10,10,30">
+                            <Button Text="?"
+                                    FontSize="20"
+                                    HorizontalOptions="End"
+                                    BorderColor="White"
+                                    BackgroundColor="White"
+                                    TextColor="Black"
+                                    CornerRadius="20"
+                                    Command="{Binding ShowQuickTourCommand}"
+                                    Padding='15,5'/>
+                            
+                            <Label Text="Dashboard"
+                                   FontSize="17"
+                                   HorizontalTextAlignment="Center"
+                                   TextColor="White"
+                                   HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+
+                       <Grid ColumnDefinitions="Auto, *"
+                                RowDefinitions="Auto, Auto, Auto, 1"
+                                ColumnSpacing="10"
+                                RowSpacing="5"
+                                Padding="0,10">
+
+                                <Image Source="https://randomuser.me/api/portraits/women/75.jpg"
+                                        Margin="20,0,0,10"
+                                        HeightRequest="70"
+                                        WidthRequest="70"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        Grid.RowSpan="3"
+                                        Grid.Row="0"
+                                        Grid.Column="0">
+                                    <Image.Clip>
+                                                <EllipseGeometry
+                                                    Center="35,35"
+                                                    RadiusX="35"
+                                                    RadiusY="35"/>
+                                            </Image.Clip>
+                                </Image>
+
+                                <Label Text="Lori Larson"
+                                        FontAttributes="Bold"
+                                        Grid.Column="1"
+                                        Grid.Row="0"/>
+
+                                <Label Text="jeanette.lewis@example.com"
+                                        Grid.Column="1"
+                                        Grid.Row="1"/>
+
+                                <Label Text="950)-753-0140"
+                                        Grid.Column="1"
+                                        Grid.Row="2"/>
+                            </Grid>
+
+                         <Label Text="My TODOs"
+                                FontAttributes="Bold"
+                                Padding="15,0"/>
+
+                        <ListView VerticalOptions="Start">
+                              <ListView.ItemsSource>
+                                  <x:Array Type="{x:Type x:String}">
+                                      <x:String>Finish Quick</x:String>
+                                      <x:String>Review Pending Items </x:String>
+                                      <x:String>Review Pending Items </x:String>
+                                  </x:Array>
+                              </ListView.ItemsSource>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal"
+                                                     Padding="15,0">
+                                            <Label Text="{Binding .}"
+                                                   VerticalOptions="Center"
+                                                   HorizontalOptions="FillAndExpand"/>
+                                            <CheckBox Color="{StaticResource MainAppColor}"
+                                                      IsChecked="True"/>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                        <StackLayout Orientation="Horizontal"
+                                     Spacing="0">
+                              <Button Text="My Accounts"
+                                      BackgroundColor="{StaticResource MainAppColor}"
+                                      HorizontalOptions="FillAndExpand"
+                                      TextColor="White"
+                                      CornerRadius="0"/>
+                              <Button Text="All founds"
+                                      BackgroundColor="{StaticResource MainSecondayColor}"
+                                      HorizontalOptions="FillAndExpand"
+                                      TextColor="White"
+                                      CornerRadius="0"/>
+                         </StackLayout>
+                    </StackLayout>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BaseQuickTourPage
+    xmlns:local="clr-namespace:QuickTourXFSample.Views.QuickTourSteps"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Controls="clr-namespace:QuickTourXFSample.Controls"
+    x:Class="QuickTourXFSample.Views.QuickTourSteps.QuickTourStep3PopUp" >
+       <StackLayout Padding="10,130,10,0">
+            <Controls:AnimatedView>
+            <Frame HorizontalOptions="FillAndExpand"
+                    Padding="0"
+                    VerticalOptions="Start">
+                <Grid ColumnDefinitions="Auto, *"
+                        RowDefinitions="Auto, Auto, Auto, 1"
+                        ColumnSpacing="10"
+                        RowSpacing="5"
+                        Padding="0,10">
+
+                        <Image Source="https://randomuser.me/api/portraits/women/75.jpg"
+                                Margin="20,0,0,10"
+                                HeightRequest="70"
+                                WidthRequest="70"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Grid.RowSpan="3"
+                                Grid.Row="0"
+                                Grid.Column="0">
+                            <Image.Clip>
+                                        <EllipseGeometry
+                                            Center="35,35"
+                                            RadiusX="35"
+                                            RadiusY="35"/>
+                                    </Image.Clip>
+                        </Image>
+
+                        <Label Text="Lori Larson"
+                                FontAttributes="Bold"
+                                Grid.Column="1"
+                                Grid.Row="0"/>
+
+                        <Label Text="jeanette.lewis@example.com"
+                                Grid.Column="1"
+                                Grid.Row="1"/>
+
+                        <Label Text="950)-753-0140"
+                                Grid.Column="1"
+                                Grid.Row="2"/>
+                    </Grid>
+            </Frame>
+        </Controls:AnimatedView>
+
+            <Label Text="Check your info card here"
+                   Style="{StaticResource QuickTourInfoLabelStyle}" />
+
+             <Label Text="You are all set, Welcome! :)"
+                    Style="{StaticResource QuickTourInfoLabelStyle}" 
+                    FontSize="Large" />
+         </StackLayout>
+</local:BaseQuickTourPage>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BaseQuickTourPage
+    xmlns:local="clr-namespace:QuickTourXFSample.Views.QuickTourSteps"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Controls="clr-namespace:QuickTourXFSample.Controls"
+    x:Class="QuickTourXFSample.Views.QuickTourSteps.QuickTourStep1PopUp" >
+
+        <Controls:AnimatedView VerticalOptions="CenterAndExpand">
+            <Frame Padding="20"
+                   Margin="20">
+               <StackLayout Spacing="20">
+                     <Label Text=" ♥❣❤❦"
+                            HorizontalOptions="Center"/>
+                     <Label Text="Welcome to MYAPP, we are so glad you decided to try out. Here is a quick tour of the main app functionalities."/>
+                </StackLayout>
+            </Frame>
+        </Controls:AnimatedView>
+</local:BaseQuickTourPage>

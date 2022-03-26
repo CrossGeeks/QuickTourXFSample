@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rg:PopupPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="QuickTourXFSample.Views.QuickTourSteps.BaseQuickTourPage"
+    xmlns:rg="http://rotorgames.com"
+    BackgroundColor="#D6072F40"
+    HasSystemPadding="True"
+    CloseWhenBackgroundIsClicked="False">
+    <rg:PopupPage.ControlTemplate>
+        <ControlTemplate>
+            <StackLayout>
+
+                <ContentPresenter VerticalOptions="FillAndExpand"/>
+
+                 <StackLayout Orientation="Horizontal"
+                              Padding="20">
+          
+                        <Button Text="Skip"
+                                Padding="0,10,0,0"
+                                TextColor="White"
+                                BackgroundColor="Transparent"
+                                VerticalOptions="End"
+                                Command="{TemplateBinding SkipCommand}"/>
+
+                          <Label VerticalOptions="End"
+                                 HorizontalOptions="EndAndExpand"
+                                 TextColor="White">
+                              <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{TemplateBinding ActualStep}" />
+                                    <Span Text="/" />
+                                    <Span Text="{TemplateBinding TotalSteps}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                            </Label>
+
+                          <Button Text="Next"
+                                  Padding="40,0"
+                                  BackgroundColor="White"
+                                  FontAttributes="Bold"
+                                  TextColor="Black"
+                                  Command="{TemplateBinding NextCommand}"
+                                  CommandParameter="{TemplateBinding NextPage}">
+                              <Button.Triggers>
+                                <DataTrigger TargetType="Button"
+                                             Binding="{TemplateBinding ActualStep}"
+                                             Value="3">
+                                    <Setter Property="Text" Value="Done" />
+                                </DataTrigger>
+                            </Button.Triggers>
+                        </Button>
+                </StackLayout>
+              </StackLayout>
+          </ControlTemplate>
+     </rg:PopupPage.ControlTemplate>
+</rg:PopupPage>

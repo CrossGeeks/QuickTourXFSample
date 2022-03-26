@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BaseQuickTourPage
+    xmlns:local="clr-namespace:QuickTourXFSample.Views.QuickTourSteps"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Controls="clr-namespace:QuickTourXFSample.Controls"
+    x:Class="QuickTourXFSample.Views.QuickTourSteps.QuickTourStep2PopUp" >
+        <StackLayout>
+             <Controls:AnimatedView>
+                    <Button Text="Add"
+                            BorderWidth="1"
+                            BorderColor="White"
+                            BackgroundColor="Transparent"
+                            Padding="15,5"
+                            TextColor="White"
+                            HorizontalOptions="EndAndExpand"
+                            Clicked="OnAddTapped"/>
+                </Controls:AnimatedView>
+       
+                    <Label Text="Press on add to add more TODO Items"
+                           Style="{StaticResource QuickTourInfoLabelStyle}"  />
+
+             <Controls:AnimatedView Padding="0,130,0,0">
+                 <Frame>
+                     <StackLayout>
+                       <Label Text="My TODOs"
+                              FontAttributes="Bold"
+                              Padding="15,0"/>
+
+                            <ListView VerticalOptions="Start"
+                                      x:Name="ItemsList">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout Orientation="Horizontal"
+                                                         Padding="15,0">
+                                                <Label Text="{Binding .}"
+                                                       VerticalOptions="Center"
+                                                       HorizontalOptions="FillAndExpand"/>
+                                                <CheckBox Color="{StaticResource MainAppColor}"
+                                                          IsChecked="True"
+                                                          IsEnabled="False"/>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </Frame>
+                </Controls:AnimatedView>
+       
+                <Label Text="See your pending TODO Items here"
+                       Style="{StaticResource QuickTourInfoLabelStyle}"  />
+        </StackLayout>
+</local:BaseQuickTourPage>
